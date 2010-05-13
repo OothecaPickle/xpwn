@@ -224,6 +224,9 @@ void removeKey(Dictionary* dict, char* key) {
 					break;
 				case DataType:
 					free(((DataValue*)(toRelease))->value);
+					free(toRelease->key);
+					free(toRelease);
+					break;	
 				case IntegerType:
 				case BoolType:
 					free(toRelease->key);

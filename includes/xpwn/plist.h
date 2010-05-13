@@ -5,9 +5,9 @@ enum DictTypes {
 	DictionaryType = 1,
 	ArrayType,
 	StringType,
-	DataType,
 	IntegerType,
-	BoolType
+	BoolType,
+	DataType
 };
 
 typedef struct DictValue {
