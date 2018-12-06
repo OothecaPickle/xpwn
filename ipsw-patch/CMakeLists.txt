@@ -1,6 +1,7 @@
 INCLUDE(FindZLIB)
 INCLUDE(FindBZip2)
 INCLUDE(FindPNG)
+INCLUDE(FindOpenSSL)
 
 FIND_LIBRARY(CRYPTO_LIBRARIES crypto
       PATHS
@@ -26,6 +27,10 @@ IF(NOT PNG_FOUND)
 	message(FATAL_ERROR "libpng is required for ipsw!")
 ENDIF(NOT PNG_FOUND)
 
+IF(NOT OPENSSL_FOUND)
+	message(FATAL_ERROR "openssl is required for ipsw!")
+ENDIF(NOT OPENSSL_FOUND)
+
 include_directories(${ZLIB_INCLUDE_DIR})
 
 IF(NOT APPLE)
@@ -36,6 +41,7 @@ include_directories(${BZIP2_INCLUDE_DIR})
 link_directories(${BZIP2_LIBRARIES})
 include_directories(${PNG_INCLUDE_DIR})
 link_directories(${PNG_LIBRARIES})
+include_directories(${OPENSSL_INCLUDE_DIR})
 
 include_directories(${PROJECT_SOURCE_DIR}/minizip)
 link_directories(${PROJECT_BINARY_DIR}/minizip)
@@ -52,7 +58,7 @@ IF(HAVE_HW_CRYPTO)
 	target_link_libraries(xpwn IOKit)
 ENDIF(HAVE_HW_CRYPTO)
 
-target_link_libraries(xpwn dmg hfs common minizip ${CRYPTO_LIBRARIES} ${BZIP2_LIBRARIES} ${PNG_LIBRARIES} m)
+target_link_libraries(xpwn dmg hfs common minizip ${CRYPTO_LIBRARIES} ${BZIP2_LIBRARIES} ${PNG_LIBRARIES} ${OPENSSL_LIBRARIES} m)
 
 IF(NOT APPLE)
 	target_link_libraries(xpwn ${ZLIB_LIBRARIES})
