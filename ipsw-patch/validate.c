@@ -290,12 +290,12 @@ cryptoMagic(X509 *x0, X509 *x1, X509 *x2,
 	int rv = 0;
 	EVP_PKEY *pk = X509_get_pubkey(x2);
 	if (pk) {
-		if (pk->type == EVP_PKEY_RSA) {
+		if (EVP_PKEY_id(pk) == EVP_PKEY_RSA) {
 			RSA *rsa = EVP_PKEY_get1_RSA(pk);
 			if (rsa) {
 				X509_STORE *store = X509_STORE_new();
 				if (store) {
-					X509_STORE_CTX ctx;
+					X509_STORE_CTX *ctx = X509_STORE_CTX_new();
 					X509_STORE_add_cert(store, x0);
 					X509_STORE_add_cert(store, x1);
 					if (X509_STORE_CTX_init(&ctx, store, x2, 0) == 1) {
