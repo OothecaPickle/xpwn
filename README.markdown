@@ -1,4 +1,4 @@
-last built by me 7/11/22 using
+last built by me on macOS 10.13.6 7/11/22 using
 
 	cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/xpwn -DUSB_LIBRARIES=/usr/local/homebrew/opt/libusb-compat/lib/libusb.dylib -DUSB_INCLUDE_DIRS=/usr/local/homebrew/opt/libusb-compat/include -DUSB_INCLUDE_DIR=/usr/local/homebrew/opt/libusb-compat/include -DOPENSSL_ROOT_DIR=$OPENSSL_ROOT_DIR -DOPENSSL_LIBRARIES=$OPENSSL_LIBRARIES -DCRYPTO_LIBRARIES=/usr/local/homebrew/opt/openssl@1.1/lib/libcrypto.dylib
 
