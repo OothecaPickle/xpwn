@@ -12,3 +12,5 @@ link_directories(${ZLIB_LIBRARIES})
 add_library(minizip ioapi.c unzip.c zip.c)
 
 target_link_libraries(minizip z)
+
+install(TARGETS minizip DESTINATION bin)

@@ -18,6 +18,6 @@ IF(NOT APPLE OR NOT BUILD_STATIC)
 		target_link_libraries(dfu-util xpwn)
 		target_link_libraries(dfu-util ${USB_LIBRARIES})
 
-		install(TARGETS dfu-util DESTINATION .)
+		install(TARGETS dfu-util DESTINATION bin)
 	ENDIF(NOT USB_FOUND)
 ENDIF(NOT APPLE OR NOT BUILD_STATIC)

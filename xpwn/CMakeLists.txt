@@ -23,8 +23,8 @@ IF(NOT APPLE OR NOT BUILD_STATIC)
 			SET_TARGET_PROPERTIES(xpwn-bin PROPERTIES LINK_FLAGS "-framework CoreFoundation -framework IOKit")
 		ENDIF(APPLE)
 
-		install(FILES ramdisk.dmg DESTINATION .)
-		install(TARGETS xpwn-bin DESTINATION .)
+		install(FILES ramdisk.dmg DESTINATION share/xpwn)
+		install(TARGETS xpwn-bin DESTINATION bin)
 
 	ENDIF(NOT USB_FOUND)
 ENDIF(NOT APPLE OR NOT BUILD_STATIC)

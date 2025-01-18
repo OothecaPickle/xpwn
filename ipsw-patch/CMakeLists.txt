@@ -118,7 +118,7 @@ IF(WIN32)
 	install(TARGETS itunespwn RUNTIME DESTINATION .)
 ENDIF(WIN32)
 
-install(TARGETS ipsw xpwntool validate ticket RUNTIME DESTINATION .)
+install(TARGETS ipsw xpwntool validate ticket imagetool RUNTIME DESTINATION bin)
 install(DIRECTORY FirmwareBundles/ DESTINATION FirmwareBundles)
 install(DIRECTORY bundles/ DESTINATION bundles)
 

@@ -15,5 +15,5 @@ target_link_libraries(hfs ${ZLIB_LIBRARIES})
 add_executable(hfsplus hfs.c)
 target_link_libraries (hfsplus hfs dmg)
 
-install(TARGETS hfsplus DESTINATION .)
+install(TARGETS hfsplus DESTINATION bin)
 

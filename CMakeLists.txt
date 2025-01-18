@@ -27,8 +27,8 @@ add_subdirectory (idevice)
 add_subdirectory (pwnmetheus2)
 add_subdirectory (dripwn)
 
-install(FILES README.markdown DESTINATION . RENAME README.txt)
-install(FILES LICENSE DESTINATION . RENAME LICENSE.txt)
+install(FILES README.markdown DESTINATION share/xpwn RENAME README.txt)
+install(FILES LICENSE DESTINATION share/xpwn RENAME LICENSE.txt)
 
 IF(WIN32 OR APPLE)
 	SET(CPACK_GENERATOR "ZIP")

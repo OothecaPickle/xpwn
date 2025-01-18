@@ -6,5 +6,5 @@ target_link_libraries (dripwn xpwn)
 include_directories(${PROJECT_SOURCE_DIR}/minizip)
 link_directories(${PROJECT_BINARY_DIR}/minizip)
 
-install(TARGETS dripwn DESTINATION .)
+install(TARGETS dripwn DESTINATION bin)
 
